@@ -105,7 +105,7 @@ const brechaCambiaria = {
     brechaMayoristaBlue: parseInt(dolarBlue.cotizacionHoyVenta * 100 / dolarMayorista.cotizacionHoyVenta - 100),
 }
 
-var menu = prompt("Qué desea calcular: \n1 - Dólar Oficial \n2 - Dólar Blue \n3 - Dólar Mayorista \n4 - Brecha Cambiaria")
+var menu = prompt("Qué desea calcular: \n1 - Dólar Oficial \n2 - Dólar Blue \n3 - Dólar Mayorista \nVer: \n4 - Brecha Cambiaria")
         switch(menu){
             case "1":
                 var subMenu = prompt("Dólar Oficial, calcular: \n1 - Compa \n2 - Venta")
