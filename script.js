@@ -1,6 +1,6 @@
 // Crear 3 objetos literales (distintos) 
 
-/* Impustos y Recargos */
+/* Impuestos y Recargos */
 const impuestoReacargos = {
     impuestoPais: 30,
     recargoMenos300: 45,
@@ -16,7 +16,6 @@ const dolarOficial = {
     cotizacionAnteriorVenta: 248.00,
 
     calculadoraComprar: function(){
-        // prompt("Cantidad de dólares a comprar:")
         if(calcularConsultaComprar!=0){
             if(calcularConsultaComprar<=299){
                 calcular = this.cotizacionHoyVenta * calcularConsultaComprar
@@ -35,7 +34,6 @@ const dolarOficial = {
     },
 
     calculadoraVender: function(){
-        // prompt("Cantidad de dólares a comprar:")
         if(calcularConsutaVender!=0){
             calcular = calcularConsutaVender * this.cotizacionHoyCompra
             alert("La venta de " + calcularConsutaVender + " dólares son: $" + calcular)
@@ -55,7 +53,6 @@ const dolarBlue = {
     cotizacionAnteriorVenta: 493.00,
 
     calculadoraComprar: function(){
-        // prompt("Cantidad de dólares a comprar:")
         if(calcularConsultaComprar!=0){
             calcular = calcularConsultaComprar * this.cotizacionHoyVenta
             alert(calcularConsultaComprar + " dólares al precio del blue le costraran: $" + calcular)
@@ -65,7 +62,6 @@ const dolarBlue = {
     },
 
     calculadoraVender: function(){
-        // prompt("Cantidad de dólares a comprar:")
         if(calcularConsutaVender!=0){
             calcular = this.cotizacionHoyCompra * calcularConsutaVender
             alert("La venta de " + calcularConsutaVender + " dólares blue son: $" + calcular)
@@ -84,7 +80,6 @@ const dolarMayorista = {
     cotizacionAnteriorVenta: 239.00,
 
     calculadoraComprar: function(){
-        // prompt("Cantidad de dólares a comprar:")
         if(calcularConsultaComprar!=0){
             calcular = calcularConsultaComprar * this.cotizacionHoyVenta
             alert(calcularConsultaComprar + " dólares mayorista le costraran: $" + calcular)
