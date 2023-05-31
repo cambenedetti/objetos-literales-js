@@ -1,5 +1,12 @@
 // Crear 3 objetos literales (distintos) 
 
+/* Impustos y Recargos */
+const impuestoReacargos = {
+    impuestoPais: 30,
+    recargoMenos300: 45,
+    recargoMas300: 100,
+}
+
 /* Dólar Oficial */
 const dolarOficial = {
     moneda: "Dólar Oficial",
@@ -14,12 +21,12 @@ const dolarOficial = {
             if(calcularConsultaComprar<=299){
                 calcular = this.cotizacionHoyVenta * calcularConsultaComprar
                 calcularImpuestos = calcular / 100
-                calcularImpuestos = calcularImpuestos * 175
+                calcularImpuestos = calcularImpuestos * (100 + impuestoReacargos.impuestoPais + impuestoReacargos.recargoMenos300)
                 alert(calcularConsultaComprar + " dólares al precio oficial de "  + this.cotizacionHoyVenta + " le costaran: $" + calcular + " a los que debe agregar el Impuesto PAIS del 30% y el recargo del 45%. \nEl precio final es de $" + calcularImpuestos + " pesos argentinos")
             }else{
                 calcular = this.cotizacionHoyVenta * calcularConsultaComprar
                 calcularImpuestos = calcular / 100
-                calcularImpuestos = calcularImpuestos * 200
+                calcularImpuestos = calcularImpuestos * (100 + impuestoReacargos.impuestoPais + impuestoReacargos.recargoMas300)
                 alert(calcularConsultaComprar + " dólares al precio oficial de "  + this.cotizacionHoyVenta + " le costaran: $" + calcular + " a los que debe agregar el Impuesto PAIS del 30% y el recargo del 45% + el 25% al ser un cosumo mayor a 300 dólares. \nEl precio final es de $" + calcularImpuestos + " pesos argentinos")
             }          
         }else{
@@ -96,6 +103,13 @@ const dolarMayorista = {
     },
 }
 
+const brechaCambiaria = {
+    brechaOB: "Dólar Oficial - Blue",
+    brechaMB: "Dólar Mayorista - Blue",
+    brechaOficialBlue: parseInt(dolarBlue.cotizacionHoyVenta * 100 / dolarOficial.cotizacionHoyVenta - 100),
+    brechaMayoristaBlue: parseInt(dolarBlue.cotizacionHoyVenta * 100 / dolarMayorista.cotizacionHoyVenta - 100),
+}
+
 var menu = prompt("Qué desea calcular: \n1 - Dólar Oficial \n2 - Dólar Blue \n3 - Dólar Mayorista \n4 - Brecha Cambiaria")
         switch(menu){
             case "1":
@@ -144,11 +158,7 @@ var menu = prompt("Qué desea calcular: \n1 - Dólar Oficial \n2 - Dólar Blue \
                 }
                 break
                 case "4":
-                    var brechaOficialBlue = parseInt(dolarBlue.cotizacionHoyVenta * 100 / dolarOficial.cotizacionHoyVenta - 100)
-                    var brechaMayoristaBlue = parseInt(dolarBlue.cotizacionHoyVenta * 100 / dolarMayorista.cotizacionHoyVenta - 100)
-
-                    var brecha = prompt("Brecha cambiaria:\n Dólar Oficial - Blue: " + brechaOficialBlue + "% \n Dólar Mayorista - Blue: " + brechaMayoristaBlue + "%")
-
+                    alert("Brecha cambiaria\n " + brechaCambiaria.brechaOB + ": " + brechaCambiaria.brechaOficialBlue + "% \n " + brechaCambiaria.brechaMB + ": " + brechaCambiaria.brechaMayoristaBlue + "%")
                 break
             default:
                 alert("Por favor, ingrese una cantidad válida.")
