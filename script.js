@@ -1,4 +1,4 @@
-// Crear 3 objetos literales (distintos)
+// Crear 3 objetos literales (distintos) 
 
 /* Dólar Oficial */
 const dolarOficial = {
